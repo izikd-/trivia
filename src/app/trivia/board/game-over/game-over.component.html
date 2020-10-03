@@ -8,4 +8,7 @@
   <div class="row row--center">
     <app-btn (click)="saveScore(name.value)" [disable]="" [text]="'Save'"></app-btn>
   </div>
+  <div class="row row--center" *ngIf="errMsg">
+    {{errMsg}}
+  </div>
 </div>
