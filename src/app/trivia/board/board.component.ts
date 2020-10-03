@@ -99,6 +99,7 @@ export class BoardComponent implements OnInit, OnDestroy {
   }
 
   private getQuestions(): void {
+    this.gameOver = false;
     this.store.dispatch(getQuestions());
     this.store.select(selectQuestions).pipe(
       takeUntil(this.destroy$),
