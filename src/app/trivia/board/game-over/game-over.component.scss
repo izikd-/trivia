@@ -1,0 +1,39 @@
+@import "../../../../colors";
+
+:host {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-over {
+  display: flex;
+  flex-direction: column;
+  width: 50rem;
+  text-align: center;
+  background: inherit;
+  padding: 3rem;
+  color: #fff;
+  border-radius: 0.4rem;
+
+  &__title {
+    font-size: 6rem;
+
+  }
+
+  &__score {
+    margin-bottom: 1.5rem;
+  }
+
+  input {
+    margin-bottom: 1.5rem;
+    max-width: 37.5rem;
+    width: 100%;
+  }
+}

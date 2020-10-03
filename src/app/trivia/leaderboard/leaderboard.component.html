@@ -1,0 +1,10 @@
+<div class="row row--center">
+  <app-btn (click)="startGame()" [text]="'START GAME'"></app-btn>
+</div>
+<h1>Leaderboard</h1>
+<div *ngFor="let player of players; let i = index;">
+  <div class="row row--sb players">
+    <div class="col">{{i + 1 + '. ' + player.name}}</div>
+    <div class="col">{{player.score}}</div>
+  </div>
+</div>

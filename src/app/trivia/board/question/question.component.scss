@@ -1,0 +1,53 @@
+@import "../../../../colors";
+
+h1 {
+  color: #223336;
+  padding: 0 1.5rem;
+  font-size: 3rem;
+}
+
+.answers {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.answer {
+  background: #FAFAFA;
+  border: 0.2rem solid #D9E6EB;
+  border-radius: 2.3rem;
+  width: 57rem;
+  height: 16.4rem;
+  font-size: 2.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1.5rem 1.5rem;
+  cursor: pointer;
+  padding:  1.5rem;
+  background-position-y: center;
+  background-position-x: 3rem;
+  background-size: 7rem;
+  background-repeat: no-repeat;
+
+  &.selected {
+    border: #0D7BAB 0.4rem solid;
+    color: #0D7BAB;
+  }
+
+  &.correct {
+    border: #{$green} 0.4rem solid;
+    color: $green;
+    background-image: url('../../../../assets/img/correct.png');
+
+  }
+
+  &.wrong {
+    border: #{$red} 0.4rem solid;
+    color: $red;
+    background-image: url('../../../../assets/img/wrong.png');
+  }
+
+  &:hover {
+    box-shadow: 0.1rem 0.1rem 0.8rem 0.1rem rgba(0, 0, 0, 0.1);
+  }
+}

@@ -1,0 +1,11 @@
+<div class="game-over">
+  <span class="game-over__title">GAME OVER</span>
+  <span class="game-over__score">Your score: {{score}}</span>
+  <div class="row row--center">
+    <label for="name">Name</label>
+    <input #name id="name" placeholder="Name..." type="text">
+  </div>
+  <div class="row row--center">
+    <app-btn (click)="saveScore(name.value)" [disable]="" [text]="'Save'"></app-btn>
+  </div>
+</div>

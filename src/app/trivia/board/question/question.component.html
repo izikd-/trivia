@@ -1,0 +1,14 @@
+<h1>{{question?.question}}</h1>
+<div class="answers">
+  <div #answerEL (click)="selectAnswer(answerEL)" *ngFor="let answer of question?.answers" [ngClass]="{
+       'correct': (answerEL === selectedElement) && answerStatus === AnswerStatus.true,
+       'wrong': (answerEL === selectedElement) && answerStatus === AnswerStatus.false,
+       'selected': answerEL === selectedElement && answerStatus === AnswerStatus.none
+       }"
+       class="answer">
+    {{answer}}
+  </div>
+</div>
+<div class="row row--center">
+  <app-btn (click)="submitAnswer()" [disable]="!selectedElement || isWorking" [text]="'OK'"></app-btn>
+</div>

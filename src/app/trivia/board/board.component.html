@@ -1,0 +1,26 @@
+<ng-container *ngIf="questions?.length > 0; else loading;">
+  <div class="question-status row row--sa">
+    <div class="col">
+      Lives: {{lives$ | async}}
+    </div>
+    <div class="col">
+      Questions: {{currentQuestionIndex}} / {{questions?.length}}
+    </div>
+    <div class="col">
+      Points: <span class="points">{{ points$ | async}}</span>
+    </div>
+  </div>
+  <div class="row row--center">
+    <span [class.c-warning]="(timer$ | async ) < 5" class="timer">Time Left: {{timer$ | async}}</span>
+  </div>
+  <app-question (selectedAnswer)="selectAnswer($event)" [data]="currentQuestion"></app-question>
+  <div class="progress-bar row row--center">
+    <div *ngFor="let q of questions; let i = index;" [class.current]="currentQuestionIndex > i"></div>
+  </div>
+</ng-container>
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>
+<div *ngIf="gameOver">
+  <app-game-over (save)="save($event)" [score]="points$ | async"></app-game-over>
+</div>

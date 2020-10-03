@@ -1,0 +1,50 @@
+@import "../../../colors";
+
+.progress-bar {
+  display: flex;
+  margin-top: 5.7rem;
+
+  > div {
+    background: #C9CFD3;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    margin-left: 2.2rem;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &.current {
+      background: $primary-color;
+    }
+  }
+}
+
+.timer {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.points {
+  display: inline-block;
+  background: #000;
+  color: yellow;
+  width: 10rem;
+  padding: 0 0.8rem;
+}
+
+.question-status {
+  background: #6AA4BA;
+  align-items: center;
+  font-size: 3rem;
+  padding: 1.5rem;
+  color: #fff;
+}
+
+@media (max-width: 768.98px) {
+  .question-status {
+    flex-direction: column;
+  }
+}
